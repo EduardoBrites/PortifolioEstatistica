@@ -9,8 +9,8 @@ if "data" not in st.session_state:
     st.session_state["data"] = df
 
 # Configuração da página
-st.set_page_config(page_title="Dashboard de Distribuições Probabilísticas", layout="wide")
-st.sidebar.markdown("Desenvolvido por Prof. Tiago Marum [THM Estatística](https://thmestatistica.com)")
+st.set_page_config(page_title="Portifólio Eduardo Brites Coutinho", layout="wide")
+st.sidebar.markdown("Desenvolvido por Eduardo Brites Coutinho [LinkedIn](https://www.linkedin.com/in/eduardo-brites-4b1332293/)")
 
 # Adicionando logo com streamlit-extras
 # add_logo("logo.jpeg")
@@ -21,11 +21,7 @@ st.logo("logo.png")
 # Adicionando o logo no body
 st.image("logo.png", width=150)
 
-st.title("Aula de Distribuições Probabilísticas - FIAP")
-
-st.write("As distribuições probabilísticas são fundamentais para a Inferência Estatística e Machine Learning, permitindo modelar incertezas e entender padrões nos dados.")
-
-st.write("Por exemplo, ao estimar a chance de um cliente converter em uma compra, podemos usar uma distribuição Bernoulli. Já para prever a demanda por um produto, uma distribuição Poisson pode ser aplicada. Modelos de aprendizado de máquina, como redes neurais e regressão logística, também se beneficiam dessas distribuições para ajustar pesos e probabilidades de classificação.")
-
-st.video("https://www.youtube.com/watch?v=f6nXayXgjZI")
+st.html(
+    "<h1>Eduardo Brites Coutinho</h1>"
+)
 
