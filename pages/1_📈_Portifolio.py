@@ -1,28 +1,57 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from PIL import Image
 
 st.set_page_config(
-    page_title="Dados",
+    page_title="Portifólio",
     page_icon="🏃🏼",
     layout="wide"
 )
 
-df = st.session_state["data"]
+def crop_image(path):
+    im = Image.open(path)
+    
+    width, height = im.size
+    
+    bottom = 3*height / 4
+    
+    im1 = im.crop((0, 0, 0, bottom))
+    return im1 
 
-tipos='Todos'
-tipos = np.append(tipos,df["Post type"].unique())
-tipo = st.sidebar.selectbox("Tipo de Post", tipos)
-st.sidebar.markdown("Desenvolvido por Prof. Tiago Marum [THM Estatística](https://thmestatistica.com)")
+st.title("Portifólio", anchor=False)
 
-if tipo == 'Todos':
-    df_filtered = df
-else:
-    df_filtered = df[(df["Post type"]==tipo)]
+col1, col2, col3 = st.columns(3)
 
-#df_filtered
-st.dataframe(df_filtered,
-             column_config={
-                 "Likes": st.column_config.ProgressColumn(
-                     "Likes", format="%f", min_value=0, max_value=int(df_filtered["Likes"].max()))
-                 })
+with col1:
+    
+    st.image("img/D1/Home.png", caption="Project 1")
+    if st.button("Ver mais", type="secondary", use_container_width=True, key="P1"):
+        st.write("Project 1")
+    st.write("")
+    
+    st.image("img/Biblioteca/Tela inicial.png", caption="Project 1")
+    if st.button("Ver mais", type="secondary", use_container_width=True, key="P2"):
+        st.write("Project 1")
+        
+with col2:
+    
+    image1 = crop_image("img/GS2/Home.png")
+    st.image("img/GS2/Home.png", caption="Project 1")
+    if st.button("Ver mais", type="secondary", use_container_width=True, key="P3"):
+        st.write("Project 1")
+    st.write("")
+    
+    st.image("img/Biblioteca/Tela inicial.png", caption="Project 1")
+    if st.button("Ver mais", type="secondary", use_container_width=True, key="P4"):
+        st.write("Project 1")
+        
+with col3:
+    st.image("img/D1/Home.png", caption="Project 1")
+    if st.button("Ver mais", type="secondary", use_container_width=True, key="P5"):
+        st.write("Project 1")
+    st.write("")
+    
+    st.image("img/Biblioteca/Tela inicial.png", caption="Project 1")
+    if st.button("Ver mais", type="secondary", use_container_width=True, key="P6"):
+        st.write("Project 1")
