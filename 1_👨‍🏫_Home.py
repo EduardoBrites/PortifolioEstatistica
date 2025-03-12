@@ -5,9 +5,10 @@ from streamlit_extras.app_logo import add_logo
 import time
 
 if "data" not in st.session_state:
-    df = pd.read_excel("Dados_InstagramCliente_AULA_3ESP.xlsx", index_col="Post ID")
-    df = df.sort_values(by="Reach", ascending=False)
+    df = pd.read_csv("Companies.csv")
+    #df = df.sort_values(by="Reach", ascending=False)
     st.session_state["data"] = df
+
 
 # Configuração da página
 st.set_page_config(page_title="Portifólio Eduardo Brites Coutinho", layout="wide")
