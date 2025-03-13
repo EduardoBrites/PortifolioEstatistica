@@ -99,4 +99,3 @@ with col2:
             text_space.write(exibit)
             time.sleep(0.05)
 
-
