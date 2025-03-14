@@ -389,7 +389,18 @@ with secondarycol2:
     
     st.title("")
     
+    st.markdown(
+    """
+    <h2>Distribuição:</h2>
+
+    <h5>---</h5>   
+    <br> 
+    """,
+    unsafe_allow_html=True
+    )
     
+    st.title("")
+
     st.markdown(
     """
     <h2>Conclusão</h2>

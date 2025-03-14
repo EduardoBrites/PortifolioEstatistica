@@ -26,6 +26,7 @@ with col2:
     #st.markdown("<h1 style='text-align:center;'>Eduardo Brites Coutinho</h1>", unsafe_allow_html=True)
     
 st.title("")
+
 col1, col2, col3 = st.columns([1, 4, 1])
 
 with col2:
@@ -99,3 +100,26 @@ with col2:
             text_space.write(exibit)
             time.sleep(0.05)
 
+st.title("")
+
+"""col1, col2, col3, col4, col5 = st.columns([4, 3, 3, 3, 4])
+
+with col2:
+    subcol1, subcol2, subcol3 = st.columns([1, 10, 1])
+    
+    with subcol2:
+        st.image("img/Contact/TELEPHONE.png", width=75, caption="(11) 98655-7073)")
+        if st.button(label="Phone", type="primary"):
+            st.success(body="(11)")
+    
+with col3:
+    subcol1, subcol2, subcol3 = st.columns([1, 10, 1])
+    
+    with subcol2:
+        st.image("img/Contact/MAIL.png", width=75, caption="eduardocoutinho30089@gmail.com")
+
+with col4:
+    subcol1, subcol2, subcol3 = st.columns([1, 10, 1])
+    
+    with subcol2:
+        st.image("img/Contact/LINKEDIN.png", width=75, caption="Linkedin")"""
