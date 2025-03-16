@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy.stats as stats
+import plotly.express as px
+import plotly.graph_objects as go
+import plotly.figure_factory as ff
 
 st.set_page_config(
     page_title="Dados",
@@ -391,13 +395,54 @@ with secondarycol2:
     
     st.markdown(
     """
+    <style>
+        .justificado {
+            text-align: justify;
+        }
+    </style>
+        
     <h2>Distribuição:</h2>
-
-    <h5>---</h5>   
-    <br> 
+  
+    <br>
+    <p class="justificado">Para essa análise podemos utilizar a distribuição de Poisson para descobrir em um certo numero de eventos qual é a probabilidade de certa empresa ser escolhida</p>
+    <p class="justificado">A baixo, escolhemos 50 como o numero de eventos desejado, representando o banco que tem 50 linhas de informação, em seguida definimos a taxa média de ocorrência, anteriormente no documento calculamos quantas empresas possuiam cada serviço de cloud, a tabela resultante foi a seguinte:</p> 
     """,
     unsafe_allow_html=True
     )
+    
+    st.write(cloud_usage_counts)
+    
+    st.markdown(
+    """
+    <style>
+        .justificado {
+            text-align: justify;
+        }
+    </style>
+        
+    <h2>Distribuição:</h2>
+  
+    <br>
+    <p class="justificado">Se escolhermos, por exemplo o salesforce, devemos alterar a média de ocorrência para 17:""",
+    unsafe_allow_html=True
+    )
+    
+    def plot_distribution(x, y, title, xlabel, ylabel):
+     fig = go.Figure(data=[go.Bar(x=x, y=y)])
+     fig.update_layout(title=title, xaxis_title=xlabel, yaxis_title=ylabel)
+     st.plotly_chart(fig)
+    
+    subcol1, subcol2 = st.columns([0.5, 0.5])
+    
+    lambd = subcol1.number_input("Taxa média de ocorrência (λ):",min_value=0.001,step=0.01,value=17.0)
+    x_max = subcol1.number_input("Número de eventos desejado",min_value=0, step=1,value=50)
+    x = np.arange(0, x_max)  
+    y = stats.poisson.pmf(x, lambd)
+    df_poisson = pd.DataFrame({"X": x, "P(X)": y, "P(X ≤ k) (Acumulado)": np.cumsum(y),
+                               "P(X > k) (Acumulado Cauda Direita)": 1-np.cumsum(y)}).set_index("X")
+    col2.write("Tabela de probabilidades:")
+    col2.write(df_poisson)
+    plot_distribution(x, y, "Distribuição de Poisson", "Número de eventos", "Probabilidade")
     
     st.title("")
 
@@ -415,3 +460,5 @@ with secondarycol2:
     """,
     unsafe_allow_html=True
     )
+
+    
