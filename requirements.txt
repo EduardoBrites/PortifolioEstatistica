@@ -6,4 +6,3 @@ plotly
 openpyxl
 streamlit-extras
 xlrd
-plotnine

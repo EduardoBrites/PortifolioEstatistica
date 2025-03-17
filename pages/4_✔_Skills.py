@@ -4,11 +4,11 @@ import numpy as np
 
 st.set_page_config(
     page_title="Skills",
-    page_icon="🏃🏼",
+    page_icon="❇️",
     layout="wide"
 )
 
-st.sidebar.markdown("Desenvolvido por Eduardo Brites Coutinho")
+st.sidebar.markdown("Desenvolvido por Eduardo Brites Coutinho [LinkedIn](https://www.linkedin.com/in/eduardo-brites-4b1332293/)")
 
 col1, col2 = st.columns([1, 4])
 

@@ -102,15 +102,13 @@ with col2:
 
 st.title("")
 
-"""col1, col2, col3, col4, col5 = st.columns([4, 3, 3, 3, 4])
+col1, col2, col3, col4, col5 = st.columns([4, 3, 3, 3, 4])
 
 with col2:
     subcol1, subcol2, subcol3 = st.columns([1, 10, 1])
     
     with subcol2:
         st.image("img/Contact/TELEPHONE.png", width=75, caption="(11) 98655-7073)")
-        if st.button(label="Phone", type="primary"):
-            st.success(body="(11)")
     
 with col3:
     subcol1, subcol2, subcol3 = st.columns([1, 10, 1])
@@ -122,4 +120,4 @@ with col4:
     subcol1, subcol2, subcol3 = st.columns([1, 10, 1])
     
     with subcol2:
-        st.image("img/Contact/LINKEDIN.png", width=75, caption="Linkedin")"""
+        st.image("img/Contact/LINKEDIN.png", width=75, caption="[LinkedIn](https://www.linkedin.com/in/eduardo-brites-4b1332293/)")

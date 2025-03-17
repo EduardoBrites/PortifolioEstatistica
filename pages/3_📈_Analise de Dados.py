@@ -3,13 +3,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as stats
-import plotly.express as px
 import plotly.graph_objects as go
-import plotly.figure_factory as ff
 
 st.set_page_config(
     page_title="Dados",
-    page_icon="🏃🏼",
+    page_icon="🎲",
     layout="wide"
 )
 
