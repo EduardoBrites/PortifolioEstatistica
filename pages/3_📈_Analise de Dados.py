@@ -438,8 +438,8 @@ with secondarycol2:
     y = stats.poisson.pmf(x, lambd)
     df_poisson = pd.DataFrame({"X": x, "P(X)": y, "P(X ≤ k) (Acumulado)": np.cumsum(y),
                                "P(X > k) (Acumulado Cauda Direita)": 1-np.cumsum(y)}).set_index("X")
-    col2.write("Tabela de probabilidades:")
-    col2.write(df_poisson)
+    subcol2.write("Tabela de probabilidades:")
+    subcol2.write(df_poisson)
     plot_distribution(x, y, "Distribuição de Poisson", "Número de eventos", "Probabilidade")
     
     st.title("")
